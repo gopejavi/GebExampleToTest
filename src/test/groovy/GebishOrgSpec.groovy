@@ -2,7 +2,7 @@ import geb.spock.GebSpec
 
 class GebishOrgSpec extends GebSpec {
 
-    def "can get to the current Book of Geb"() {
+/*    def "can get to the current Book of Geb"() {
         when:
         to GebishOrgHomePage
 
@@ -17,5 +17,30 @@ class GebishOrgSpec extends GebSpec {
 
         then:
         at TheBookOfGebPage
-    }
+    }*/
+def "Simple test to navigate throught Wikipedia"() {
+        when:
+        to WikipediaHomePage
+
+        and:
+        languagesWikis.openLanguage("English")
+
+        then:
+        assert title == "Wikipedia, the free encyclopediaf"
+/*
+        and:
+        SearchBox.searchFor("MVVM")
+*//*
+        then:
+	References.To("Martin Fowler")[0].$(id)
+
+        and:
+
+
+        when:
+        manualsMenu.links[0].click()
+
+        then:
+        at TheBookOfGebPage
+  */  }
 }
