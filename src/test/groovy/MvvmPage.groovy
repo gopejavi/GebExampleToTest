@@ -8,5 +8,7 @@ class MvvmPage extends Page
     {
         referencesLinkedFromText { module(ReferencesLinkedFromTextModule) }
         referencesSection { module(ReferencesSectionModule) }
+	header { module(HeaderModule) }
+        footer { module(FooterModule) }
     }
 }

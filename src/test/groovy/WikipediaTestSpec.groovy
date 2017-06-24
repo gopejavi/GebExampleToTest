@@ -13,14 +13,28 @@ class EnglishWikipediaArticleSpec extends GebSpec
         and: "We accessed to the English version of the Wikipedia"
         at EnglishWikipediaPage
 
-        and: "Search the term MVVM"
+        then: "Check that the header contains the personal area"
+        assert header.personalArea
+
+        and: "Check that the footer talks about Creative Commons copyright"
+        assert footer.mentionsText("Creative Commons")
+
+        when: "Search the term MVVM"
         localSearchbox.searchFor("MVVM")
 
         and: "We accessed to the page that talks about MVVM"
         at MvvmPage
 
-	then: "Check there is a reference to Martin Fowler's article below"
-        assert referencesSection.refWithText("Martin Fowler")
+        then: "Check that the header contains the personal area"
+        assert header.personalArea
+
+        and: "Check that the footer talks about Creative Commons copyright"
+        assert footer.mentionsText("Creative Commons")
+
+	and: "Check there is a reference to Martin Fowler's article below"
         assert referencesSection.refWithText("The Presentation Model Design Pattern")
+
+        and: "Check that the header contains the personal area"
+        assert header.personalArea
     }
 }

@@ -7,5 +7,7 @@ class EnglishWikipediaPage extends Page
     static content =
     {
         localSearchbox { module(LocalPageSearchboxModule) }
+	header { module(HeaderModule) }
+        footer { module(FooterModule) }
     }
 }
