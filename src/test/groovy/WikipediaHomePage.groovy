@@ -1,10 +1,11 @@
 import geb.Page
 
-class WikipediaHomePage extends Page {
-
+class WikipediaHomePage extends Page
+{
     static at = { title == "Wikipedia" }
 
-    static content = {
+    static content =
+    {
         languagesWikis { module(MainPageLanguagesModule) }
     }
 }

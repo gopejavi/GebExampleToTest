@@ -18,29 +18,21 @@ class GebishOrgSpec extends GebSpec {
         then:
         at TheBookOfGebPage
     }*/
-def "Simple test to navigate throught Wikipedia"() {
-        when:
+def "Simple test to navigate throught Wikipedia"()
+{
+        given: "Access to Main Wikipedia Page"
         to WikipediaHomePage
 
-        and:
+        when: "Click on the link that reads English"
         languagesWikis.openLanguage("English")
 
-        then:
-        assert title == "Wikipedia, the free encyclopediaf"
-/*
-        and:
-        SearchBox.searchFor("MVVM")
-*//*
-        then:
-	References.To("Martin Fowler")[0].$(id)
+        then: "We accessed to the English version of the Wikipedia"
+        at EnglishWikipediaPage
 
-        and:
+        when: "Search the term MVVM"
+        localSearchbox.searchFor("MVVM")
 
-
-        when:
-        manualsMenu.links[0].click()
-
-        then:
-        at TheBookOfGebPage
-  */  }
+        then: "We accessed to the page that talks about MVVM"
+        at MvvmPage
+    }
 }

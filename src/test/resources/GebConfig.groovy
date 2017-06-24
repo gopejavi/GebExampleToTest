@@ -36,5 +36,6 @@ environments {
 }
 
 // To run the tests with all browsers just run “./gradlew test”
+// For headless browser, just "./gradew phantomJsTest"
 
 baseUrl = "https://www.wikipedia.org"
